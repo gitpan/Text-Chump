@@ -7,7 +7,7 @@ use Tie::IxHash;
 use URI::Find;
 use Carp;
 
-$VERSION = "1.01";
+$VERSION = "1.02";
 
 
 
@@ -569,6 +569,8 @@ sub _order_params
 {
 	my ($self, $function,@parts) = @_;
 	
+	return unless @parts;
+	
 	my $one = shift @parts;
 	my $two = pop   @parts;
 	
@@ -679,6 +681,13 @@ optionally wrapping it in an href to <link>
 sub _chump_image
 {
 	my ($self, $opts, $url, $label, $link) = @_;
+
+	
+	$opts->{border} ||= "";
+	$url   ||= "";	
+	$label ||= "";	
+	$link  ||= "";
+
 	my $img = "<img src='$url' alt='$label' title='$label' $opts->{border} />";
         $img = $self->_make_link($link, $img, $opts) if $link and $self->_is_url($link);
 	return $img;
@@ -715,6 +724,10 @@ returns
 sub _make_link
 {
 	my ($self, $link, $text) = @_;
+
+	$link ||= "";
+	$text ||= "";
+
 	my $opts = $_[3] || {};
 
 	my $target = (defined $self->{target})?  $self->{target} : undef;

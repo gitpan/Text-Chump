@@ -1,4 +1,7 @@
 
+v1.02 - Fixing some potential undef warnings
+
+	Found by Tom insam
 
 v1.01 - Minor _make-matcher fix
 	

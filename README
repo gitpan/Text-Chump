@@ -1,4 +1,4 @@
-README for Text::Chump 1.01
+README for Text::Chump 1.02
 
 =head1 NAME
 
@@ -73,10 +73,9 @@ and if all goes well
 =head1 HISTORY
 
 
+v1.02 - Fixing some potential undef warnings
 
-v1.01 - Minor _make-matcher fix
-	
-	Escaping the character classes unneccessarily
+	Found by Tom insam
 
 =head1 AUTHOR
 
