@@ -1,7 +1,11 @@
 
 
+v1.01 - Minor _make-matcher fix
+	
+	Escaping the character classes unneccessarily
 
-v1 - Jumping straight to a 1.0 release 
+
+v1.00 - Jumping straight to a 1.0 release 
 
 	And why not? :)
 

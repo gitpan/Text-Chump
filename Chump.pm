@@ -7,7 +7,7 @@ use Tie::IxHash;
 use URI::Find;
 use Carp;
 
-$VERSION = "1.0";
+$VERSION = "1.01";
 
 
 
@@ -277,7 +277,8 @@ sub _make_matcher {
 
 	my $regexp = "";
 	foreach my $key (keys %{$self->{types}}) {
-		next if $key eq 'link';
+		next if length $key != 1;
+		next if $key =~ m!^[a-z\d]$!m;
 		$regexp .= '\\'.$key;
 	}
 
